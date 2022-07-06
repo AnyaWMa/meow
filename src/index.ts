@@ -1,0 +1,1 @@
+export { myToUpper } from './trials';

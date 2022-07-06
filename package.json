@@ -1,0 +1,53 @@
+{
+  "name": "@bdelab/meow",
+  "version": "0.0.1",
+  "description": "Meow is a suite of tools to build ROAR apps",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json --verbose",
+    "testOpenHandles": "jest --config jestconfig.json --verbose --detectOpenHandles --runInBand",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"lib/**/*.js\"",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "doc": "npx typedoc",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeatmanlab/meow.git"
+  },
+  "keywords": [
+    "jspsych",
+    "roar",
+    "reading",
+    "literacy",
+    "dyslexia"
+  ],
+  "author": "Adam Richie-Halford <richiehalford@gmail.com> (https://richiehalford.org/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yeatmanlab/meow/issues"
+  },
+  "homepage": "https://github.com/yeatmanlab/meow#readme",
+  "devDependencies": {
+    "@types/jest": "^27.5.2",
+    "@types/js-yaml": "^4.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.5.0",
+    "jest": "^27.5.1",
+    "prettier": "^2.5.1",
+    "ts-jest": "^27.1.3",
+    "typedoc": "^0.22.13",
+    "typescript": "^4.6.2"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
